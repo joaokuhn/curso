@@ -2,22 +2,27 @@ package application;
 
 import java.util.Scanner;
 
-import entities.Retangulo;
+import entities.Funcionario;
 
 public class Program {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Retangulo retangulo = new Retangulo();
+        Funcionario funcionario = new Funcionario();
 
-        System.out.println("Digite a base e altura do retangulo:");
-        retangulo.base = sc.nextDouble();
-        retangulo.altura = sc.nextDouble();
+        System.out.println("Nome: ");
+        funcionario.nome = sc.nextLine();
+        System.out.println("Salario Bruto: ");
+        funcionario.salarioBruto = sc.nextDouble();
+        System.out.println("Desconto: ");
+        funcionario.desconto = sc.nextDouble();
 
-        System.out.println("Area: " + retangulo.calculaArea());
-        System.out.println("Perimetro : " + retangulo.calculaPerimetro());
-        System.out.println("Diagonal " + retangulo.calculaDiagonal());
+        System.out.println("Funcionario: " + funcionario.nome + ", $" + funcionario.salarioDescontado());
+
+        System.out.println("Quanto devemos acrecentar ao salario? ");
+        double porcentagem = sc.nextDouble();
+        System.out.println("Funcionario: " + funcionario.nome + ", $" + funcionario.salarioFinal(porcentagem));
 
         sc.close();
 
