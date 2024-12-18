@@ -2,30 +2,25 @@ package application;
 
 import java.util.Scanner;
 
-import entities.Estudante;
+import entities.Idade;
 
 public class Program {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Estudante estudante = new Estudante();
+        Idade idade = new Idade();
 
-        System.out.print("Primeira nota: ");
-        estudante.nota1 = sc.nextDouble();
-        System.out.print("Segunda nota: ");
-        estudante.nota2 = sc.nextDouble();
-        System.out.print("Terceira nota: ");
-        estudante.nota3 = sc.nextDouble();
+        System.out.print("Digite os anos: ");
+        idade.ano = sc.nextInt();
+        System.out.print("Digite os meses: ");
+        idade.mes = sc.nextInt();
+        System.out.print("Digite os dias: ");
+        idade.dia = sc.nextInt();
 
-        System.out.println("Nota Final: " + estudante.notaFinal());
+        System.out.println(idade.calculaIdade() + " dias");
 
-        if (estudante.notaFinal() >= 60) {
-            System.out.println("Passou!");
-        } else {
-            System.out.println("Reprovou!");
-            System.out.println("Faltou " + (60 - estudante.notaFinal()) + " pontos");
-        }
+
         sc.close();
     }
 }
