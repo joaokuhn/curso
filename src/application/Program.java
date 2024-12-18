@@ -2,24 +2,21 @@ package application;
 
 import java.util.Scanner;
 
-import entities.Idade;
+import entities.Conversor;
 
 public class Program {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Idade idade = new Idade();
-
-        System.out.print("Digite os anos: ");
-        idade.ano = sc.nextInt();
-        System.out.print("Digite os meses: ");
-        idade.mes = sc.nextInt();
-        System.out.print("Digite os dias: ");
-        idade.dia = sc.nextInt();
-
-        System.out.println(idade.calculaIdade() + " dias");
-
+        
+        System.out.print("Qual a cotacao do dolar? ");
+        double cot = sc.nextDouble();
+        System.out.print("Quantos Dolares quer comprar? ");
+        double dol = sc.nextDouble();
+        
+        double dolares = Conversor.calculaDolar(cot, dol);
+        System.out.printf("Quantia a pagar em reais: %.2f", dolares);
 
         sc.close();
     }
